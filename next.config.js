@@ -8,24 +8,17 @@ module.exports = withImages({
   assetPrefix: (() => {
     if (NODE_ENV === 'production' && homepage) {
       try {
-        console.log('> Detected homepage url in package.json');
         const { pathname } = new URL(homepage);
-        if (pathname !== '/') {
-          console.log(`> Apply \'${pathname}\' to assetPrefix(subPath)`);
-          return pathname;
-        }
-        return '';
+        // GitHub Pages 서브 경로 적용
+        return pathname !== '/' ? pathname : '';
       } catch {
-        console.log('> Can not parse homepage URL not apply assetPrefix(subPath)');
+        console.warn('> Invalid homepage URL in package.json, assetPrefix not applied');
         return '';
       }
     }
     return '';
   })(),
+  images: {
+    unoptimized: true, // GitHub Pages에서는 이미지 최적화 비활성화
+  },
 });
-// withCSS({
-// webpack: config => {
-//   config.resolve.alias['@'] = __dirname;
-//   return config;
-// }
-// }),
