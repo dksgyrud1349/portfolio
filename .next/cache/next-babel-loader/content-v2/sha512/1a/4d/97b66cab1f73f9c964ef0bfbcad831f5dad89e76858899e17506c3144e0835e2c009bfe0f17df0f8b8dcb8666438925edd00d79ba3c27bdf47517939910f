@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { homepage, version } from '../package.json';\nconst footer = {\n  version,\n  github: homepage\n};\nexport default footer;","map":null,"metadata":{},"sourceType":"module"}
