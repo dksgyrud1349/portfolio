@@ -1,79 +1,43 @@
 import { ISkill } from '../component/skill/ISkill';
 
 const programmingLanguages: ISkill.Skill = {
-  category: 'Programming Languages',
+  category: 'Languages',
   items: [
     {
-      title: 'C',
-      level: 3,
+      title: 'Java',
     },
     {
-      title: 'Shell Scripting',
-      level: 3,
-    },
-    {
-      title: 'Python',
-      level: 3,
-    },
-    {
-      title: 'Perl',
-      level: 2,
-    },
-    {
-      title: 'Golang',
-      level: 2,
-    },
-    {
-      title: 'Rust',
-      level: 1,
+      title: 'JavaScript',
     },
   ],
 };
 
-const kernelDevelopment: ISkill.Skill = {
-  category: 'Kernel Development',
+const backEnd: ISkill.Skill = {
+  category: 'Back-end',
   items: [
     {
-      title: 'Kernel Programming',
-      level: 3,
+      title: 'Spring Framework',
     },
     {
-      title: 'GNU Debugger',
-      level: 3,
+      title: 'Spring boot',
     },
     {
-      title: 'Memory Management',
-      level: 2,
+      title: 'eGov Framework',
     },
     {
-      title: 'System Call Interface',
-      level: 2,
+      title: 'MyBatis',
+    },
+    {
+      title: 'JPA',
     },
   ],
 };
 
-const virtualization: ISkill.Skill = {
-  category: 'Virtualization',
+const frontEnd: ISkill.Skill = {
+  category: 'Front-end',
   items: [
     {
-      title: 'Docker',
-      level: 3,
-    },
-    {
-      title: 'KVM',
-      level: 3,
-    },
-    {
-      title: 'Xen',
-      level: 2,
-    },
-    {
-      title: 'VirtualBox',
-      level: 2,
-    },
-    {
-      title: 'VMware ESXi',
-      level: 1,
+      title: '',
     },
   ],
 };
@@ -164,14 +128,7 @@ const misc: ISkill.Skill = {
 
 const skill: ISkill.Payload = {
   disable: false,
-  skills: [
-    programmingLanguages,
-    kernelDevelopment,
-    virtualization,
-    automation,
-    networkSecurity,
-    misc,
-  ],
+  skills: [programmingLanguages, backEnd, frontEnd, automation, networkSecurity, misc],
   tooltip: '1: 기초 수준\n2: 취미 개발 수준\n3: Production 개발 가능 수준',
 };
 

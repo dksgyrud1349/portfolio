@@ -5,10 +5,10 @@ const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'As the cherished emblem of the Linux kernel, I have become synonymous with open-source philosophy and the free software movement worldwide. My career began in the icebergs of development, where the seeds of my fascination with operating systems first sprouted. From a mere hatchling in the vast sea of code, I quickly ascended to become a pivotal figure in the Linux community. My journey has been marked by relentless dedication to system integrity, scalability, and robustness. Under my vigilant watch, countless servers have achieved unparalleled uptimes, and systems have been optimized to run like the well-oiled machines they are intended to be.',
-    'In the world of zeros and ones, my expertise has been instrumental in pioneering advancements in Linux system engineering. My flippers have crafted meticulous kernel enhancements, each aimed at streamlining performance and bolstering security across distributed networks. I am known in the community for my ability to dive deep into complex codebases and emerge with pearls of innovation that drive the collective progress of Linux environments. Advocacy is also a part of my plumage – spreading the word about the virtues of open-source and encouraging the adoption of Linux, from personal desktops to corporate data centers. As a mentor, I have nurtured the growth of young hatchlings into seasoned professionals, contributing to the diversity and vitality of our ecosystem.',
+    '"화면 너머 현장의 흐름까지 설계하는, 엔드 투 엔드(End-to-End) 백엔드 개발자"',
+    'Java(Spring) 기반의 탄탄한 백엔드 설계 능력을 바탕으로, 공공기관 및 지자체의 대민 서비스 안정화를 주도해 왔습니다. 단순히 웹 개발에 머물지 않고 모바일 앱, 키오스크, 태블릿 등 멀티 플랫폼이 융합된 복잡한 비즈니스 환경에서 예약·결제·인증 시스템을 성공적으로 구축한 경험을 보유하고 있습니다. 100여 건의 결함 전수 해결과 실시간 핫픽스 대응으로 다져진 실무 감각을 통해, 어떤 환경에서도 비즈니스 로직의 빈틈을 메우고 시스템의 가치를 증명하는 인재가 되겠습니다.',
   ],
-  sign: 'Tux',
+  sign: 'HyokyungAn',
   // sign: packageJson.author.name,
   // latestUpdated: '2019-07-24',
   latestUpdated: lastestUpdatedAt,
