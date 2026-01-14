@@ -28,11 +28,10 @@ const profile: IProfile.Payload = {
     {
       link: 'https://github.com/dksgyrud1349',
       icon: faGithub,
-    }
+    },
   ],
   notice: {
-    title:
-      "기재된 휴대폰 번호 또는 이메일로 연락 주시면 감사하겠습니다.",
+    title: '기재된 휴대폰 번호 또는 이메일로 연락 주시면 감사하겠습니다.',
     icon: faBell,
   },
 };
