@@ -37,7 +37,7 @@ const frontEnd: ISkill.Skill = {
   category: 'Front-end',
   items: [
     {
-      title: '',
+      title: 'Vue.js',
     },
   ],
 };
