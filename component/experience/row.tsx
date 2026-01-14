@@ -51,6 +51,22 @@ export default function ExperienceRow({
     maxEndedAt = DateTime.local();
   }
 
+  function renderDescription(desc: any) {
+    if (typeof desc === 'string') return <li>{desc}</li>;
+    return (
+      <li>
+        {desc.text}
+        {desc.children && (
+          <ul>
+            {desc.children.map((child: string, idx: number) => (
+              <li key={idx}>{child}</li>
+            ))}
+          </ul>
+        )}
+      </li>
+    );
+  }
+
   const periodTitle = createOverallWorkingPeriod(sortedPositions);
   const hasMultiplePositions = sortedPositions.length > 1;
 
@@ -63,7 +79,7 @@ export default function ExperienceRow({
           <h4 style={Style.gray}>{periodTitle}</h4>
         </Col>
         <Col sm={12} md={9}>
-          <h4 style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <h4 style={{ display: 'inline-flex', alignItems: 'center', fontWeight: 'bold' }}>
             {item.title}{' '}
             <span style={{ fontSize: '65%', display: 'inline-flex', alignItems: 'center' }}>
               {isCurrentlyEmployed && (

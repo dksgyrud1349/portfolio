@@ -39,96 +39,51 @@ const frontEnd: ISkill.Skill = {
     {
       title: 'Vue.js',
     },
-  ],
-};
-
-const automation: ISkill.Skill = {
-  category: 'Automation',
-  items: [
     {
-      title: 'Ansible',
-      level: 3,
+      title: 'jQuery',
     },
     {
-      title: 'Puppet',
-      level: 3,
-    },
-    {
-      title: 'Chef',
-      level: 2,
-    },
-    {
-      title: 'Jenkins',
-      level: 2,
-    },
-    {
-      title: 'CI/CD Pipelines',
-      level: 1,
-    },
-    {
-      title: 'Infrastructure as Code',
-      level: 1,
+      title: 'JSP',
     },
   ],
 };
 
-const networkSecurity: ISkill.Skill = {
-  category: 'Network Security',
+const database: ISkill.Skill = {
+  category: 'Database',
   items: [
     {
-      title: 'iptables',
-      level: 3,
+      title: 'MariaDB',
     },
     {
-      title: 'OpenSSH',
-      level: 3,
+      title: 'MongoDB',
     },
     {
-      title: 'OpenSSL',
-      level: 2,
-    },
-    {
-      title: 'NACLs',
-      level: 2,
-    },
-    {
-      title: 'VPN Technologies',
-      level: 2,
-    },
-    {
-      title: 'Intrusion Detection',
-      level: 1,
+      title: 'Oracle',
     },
   ],
 };
 
-const misc: ISkill.Skill = {
-  category: 'Misc',
+const versionControlAndTool: ISkill.Skill = {
+  category: 'Version Control & Tool',
   items: [
     {
-      title: 'Coffee Brewing',
+      title: 'GitHub',
     },
     {
-      title: "Rubik's Cube Solving",
+      title: 'SVN',
     },
     {
-      title: 'Table Tennis',
+      title: 'Apache Tomcat 9.0',
     },
     {
-      title: 'Guitar Playing',
-    },
-    {
-      title: 'Joke Telling',
-    },
-    {
-      title: 'Duct Tape Crafting',
+      title: 'Swagger',
     },
   ],
 };
 
 const skill: ISkill.Payload = {
   disable: false,
-  skills: [programmingLanguages, backEnd, frontEnd, automation, networkSecurity, misc],
+  skills: [programmingLanguages, backEnd, frontEnd, database, versionControlAndTool],
   tooltip: '1: 기초 수준\n2: 취미 개발 수준\n3: Production 개발 가능 수준',
 };
 
