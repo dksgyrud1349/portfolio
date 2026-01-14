@@ -1,5 +1,5 @@
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { IProfile } from '../component/profile/IProfile';
@@ -28,10 +28,11 @@ const profile: IProfile.Payload = {
     {
       link: 'https://github.com/dksgyrud1349',
       icon: faGithub,
-    },
+    }
   ],
   notice: {
-    title: '기재된 휴대폰 번호 또는 이메일로 연락 주시면 감사하겠습니다.',
+    title:
+      "기재된 휴대폰 번호 또는 이메일로 연락 주시면 감사하겠습니다.",
     icon: faBell,
   },
 };
