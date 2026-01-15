@@ -3,4 +3,4 @@
 개인 포트폴리오 용도로 제작한 웹사이트입니다.
 회사 프로젝트 또는 상업 서비스와는 무관합니다.
 
-🔗 Live Demo: https://dksgyrud1349.github.io/my-portfolio
+🔗 Live Demo: https://dksgyrud1349.github.io/portfolio
