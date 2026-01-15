@@ -11,7 +11,7 @@ export function CommonDescription({
   return (
     <>
       {descriptions ? (
-        <ul className={option?.padding ? 'pt-2' : ''}>
+        <ul className={option?.padding ? 'pt-2' : 'mt-3'}>
           {descriptions.map((description, descIndex) => {
             return (
               <>

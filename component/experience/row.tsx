@@ -1,6 +1,6 @@
 import { Badge, Col, Row } from 'reactstrap';
 
-import { DateTime } from 'luxon';
+import { DateTime, Duration } from 'luxon';
 import { PropsWithChildren } from 'react';
 import { IExperience } from './IExperience';
 import { Style } from '../common/Style';
@@ -29,44 +29,7 @@ export default function ExperienceRow({
     .slice()
     .sort((a, b) => b.startedAtDate.toMillis() - a.startedAtDate.toMillis());
 
-  const minStartedAt = DateTime.min(...sortedPositions.map((position) => position.startedAtDate));
   const isCurrentlyEmployed = sortedPositions.some((position) => position.isCurrent);
-
-  function hasEndedAtDate(
-    position: PositionWithDates,
-  ): position is PositionWithDates & { endedAtDate: DateTime } {
-    return position.endedAtDate !== null;
-  }
-
-  const endedAtDates = sortedPositions
-    .filter(hasEndedAtDate)
-    .map((position) => position.endedAtDate);
-
-  let maxEndedAt: DateTime;
-  if (isCurrentlyEmployed) {
-    maxEndedAt = DateTime.local();
-  } else if (endedAtDates.length > 0) {
-    maxEndedAt = DateTime.max(...endedAtDates);
-  } else {
-    maxEndedAt = DateTime.local();
-  }
-
-  function renderDescription(desc: any) {
-    if (typeof desc === 'string') return <li>{desc}</li>;
-    return (
-      <li>
-        {desc.text}
-        {desc.children && (
-          <ul>
-            {desc.children.map((child: string, idx: number) => (
-              <li key={idx}>{child}</li>
-            ))}
-          </ul>
-        )}
-      </li>
-    );
-  }
-
   const periodTitle = createOverallWorkingPeriod(sortedPositions);
   const hasMultiplePositions = sortedPositions.length > 1;
 
@@ -88,7 +51,7 @@ export default function ExperienceRow({
                 </Badge>
               )}
               <Badge color="info" className="ml-1">
-                {Util.getFormattingDuration(minStartedAt, maxEndedAt)}
+                {getItemTotalDuration(item)}
               </Badge>
             </span>
           </h4>
@@ -110,7 +73,16 @@ export default function ExperienceRow({
             <i style={Style.gray}>{position.title}</i>
             <ul className="pt-2">
               {position.descriptions.map((description, descIndex) => (
-                <li key={descIndex.toString()}>{description}</li>
+                <li key={descIndex.toString()} className="pb-3">
+                  {description.text}
+                  {description.children && description.children.length > 0 && (
+                    <ul>
+                      {description.children.map((child, childIndex) => (
+                        <li key={childIndex.toString()}>{child}</li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
               ))}
               {createSkillKeywords(position.skillKeywords)}
             </ul>
@@ -119,6 +91,20 @@ export default function ExperienceRow({
       ))}
     </div>
   );
+}
+
+function getItemTotalDuration(item: IExperience.Item) {
+  const durations = item.positions.map((position) => {
+    const endedAt = position.endedAt
+      ? DateTime.fromFormat(position.endedAt, Util.LUXON_DATE_FORMAT.YYYY_LL)
+      : DateTime.local();
+    const startedAt = DateTime.fromFormat(position.startedAt, Util.LUXON_DATE_FORMAT.YYYY_LL);
+    return endedAt.diff(startedAt);
+  });
+
+  const total = durations.reduce((prev, cur) => prev.plus(cur), Duration.fromMillis(0));
+
+  return total.toFormat(`총 ${Util.LUXON_DATE_FORMAT.DURATION_KINDNESS}`);
 }
 
 function createOverallWorkingPeriod(positions: PositionWithDates[]) {

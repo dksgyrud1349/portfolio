@@ -7,34 +7,50 @@ import { CommonDescription } from './CommonDescription';
 export function CommonRows({
   index,
   payload,
-}: PropsWithChildren<{ payload: IRow.Payload; index: number }>) {
+  onClickRight,
+  open,
+  rightExtra,
+}: PropsWithChildren<{
+  payload: IRow.Payload;
+  index: number;
+  onClickRight?: () => void;
+  open?: boolean;
+  rightExtra?: React.ReactNode;
+}>) {
   const { left, right } = payload;
-
-  const isNeedDescriptionPadding = !!(right.title || right.subTitle);
 
   return (
     <div>
-      {index > 0 ? <hr /> : ''}
+      {index > 0 && <hr />}
       <Row>
         <Col sm={12} md={3} className="text-md-right">
-          <Row>
-            <Col md={12}>
-              <h4 style={Style.gray}>{left.title}</h4>
-            </Col>
-            {left.subTitle ? <Col md={12}>{left.subTitle}</Col> : ''}
-          </Row>
+          <h4 style={Style.gray}>{left.title}</h4>
         </Col>
+
         <Col sm={12} md={9}>
-          {right.title ? <h4>{right.title}</h4> : ''}
-          {right.subTitle ? <i style={Style.gray}>{right.subTitle}</i> : ''}
-          {right.descriptions ? (
-            <CommonDescription
-              descriptions={right.descriptions}
-              option={{ padding: isNeedDescriptionPadding }}
-            />
-          ) : (
-            ''
+          {right.title && (
+            <button
+              type="button"
+              onClick={onClickRight}
+              className="flex items-center gap-2 cursor-pointer bg-transparent border-0 p-0 text-left"
+              style={{ all: 'unset', cursor: onClickRight ? 'pointer' : 'default' }}
+            >
+              <h4 style={{ margin: 0 }}>
+                {onClickRight && <span style={{ fontSize: '90%' }}>{open ? '▼ ' : '▶ '}</span>}{' '}
+                {right.title}
+              </h4>
+            </button>
           )}
+
+          {right.subTitle && (
+            <p>
+              <i style={Style.gray}>{right.subTitle}</i>
+            </p>
+          )}
+
+          {rightExtra}
+
+          {right.descriptions && <CommonDescription descriptions={right.descriptions} />}
         </Col>
       </Row>
     </div>
