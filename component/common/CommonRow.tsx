@@ -8,7 +8,7 @@ export function CommonRows({
   index,
   payload,
   onClickRight,
-  open,
+  open = false,
   rightExtra,
 }: PropsWithChildren<{
   payload: IRow.Payload;
@@ -22,25 +22,14 @@ export function CommonRows({
   return (
     <div>
       {index > 0 && <hr />}
+
       <Row>
         <Col sm={12} md={3} className="text-md-right">
           <h4 style={Style.gray}>{left.title}</h4>
         </Col>
 
-        <Col sm={12} md={9}>
-          {right.title && (
-            <button
-              type="button"
-              onClick={onClickRight}
-              className="flex items-center gap-2 cursor-pointer bg-transparent border-0 p-0 text-left"
-              style={{ all: 'unset', cursor: onClickRight ? 'pointer' : 'default' }}
-            >
-              <h4 style={{ margin: 0 }}>
-                {onClickRight && <span style={{ fontSize: '90%' }}>{open ? '▼ ' : '▶ '}</span>}{' '}
-                {right.title}
-              </h4>
-            </button>
-          )}
+        <Col sm={12} md={9} style={{ marginBottom: '3rem' }}>
+          {right.title && <h4>{right.title}</h4>}
 
           {right.subTitle && (
             <p>
@@ -48,9 +37,35 @@ export function CommonRows({
             </p>
           )}
 
-          {rightExtra}
-
           {right.descriptions && <CommonDescription descriptions={right.descriptions} />}
+
+          {/* 🔽 토글 영역 */}
+          {open && rightExtra}
+
+          {/* 🔽 자세히 보기 (토글 닫혀 있을 때만) */}
+          {!open && onClickRight && (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+              }}
+            >
+              <button
+                type="button"
+                onClick={onClickRight}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  color: '#666',
+                  fontSize: '0.9rem',
+                }}
+              >
+                자세히 보기
+              </button>
+            </div>
+          )}
         </Col>
       </Row>
     </div>

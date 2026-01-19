@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 import { useState } from 'react';
-import { IProject } from './IProject';
+import { ISideProject } from './ISideProject';
 import { CommonRows } from '../common/CommonRow';
 import { IRow } from '../common/IRow';
 import Util from '../common/Util';
@@ -10,7 +10,7 @@ import { EmptyRowCol } from '../common';
    메인 컴포넌트
 ================================ */
 
-export default function ProjectRow({ payload }: { payload: IProject.Payload }) {
+export default function ProjectRow({ payload }: { payload: ISideProject.Payload }) {
   return (
     <EmptyRowCol>
       {payload.list.map((item) => (
@@ -20,7 +20,7 @@ export default function ProjectRow({ payload }: { payload: IProject.Payload }) {
   );
 }
 
-function ProjectItem({ item }: { item: IProject.Item }) {
+function ProjectItem({ item }: { item: ISideProject.Item }) {
   const [open, setOpen] = useState(false);
   const cases = item.cases ?? [];
   const isToggleable = cases.length > 0;
@@ -154,7 +154,7 @@ function ProjectItem({ item }: { item: IProject.Item }) {
    Row 직렬화
 ================================ */
 
-function serialize(payload: IProject.Item): IRow.Payload {
+function serialize(payload: ISideProject.Item): IRow.Payload {
   const DATE_FORMAT = Util.LUXON_DATE_FORMAT;
 
   const startedAt = DateTime.fromFormat(payload.startedAt, DATE_FORMAT.YYYY_LL).toFormat(

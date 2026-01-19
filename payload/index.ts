@@ -3,6 +3,7 @@ import introduce from './introduce';
 import skill from './skill';
 import experience from './experience';
 import project from './project';
+import sideProject from './sideProject';
 import education from './education';
 import certificate from './certificate';
 import award from './award';
@@ -16,6 +17,7 @@ import { IIntroduce } from '../component/introduce/IIntroduce';
 import { ISkill } from '../component/skill/ISkill';
 import { IExperience } from '../component/experience/IExperience';
 import { IProject } from '../component/project/IProject';
+import { ISideProject } from '../component/sideProject/ISideProject';
 import { IEducation } from '../component/education/IEducation';
 import { ICertificate } from '../component/certificate/ICertificate';
 import { IAward } from '../component/award/IAward';
@@ -29,6 +31,7 @@ const Payload: Payload = {
   skill,
   experience,
   project,
+  sideProject,
   education,
   certificate,
   award,
@@ -43,6 +46,7 @@ interface Payload {
   skill: ISkill.Payload;
   experience: IExperience.Payload;
   project: IProject.Payload;
+  sideProject: ISideProject.Payload;
   education: IEducation.Payload;
   certificate: ICertificate.Payload;
   award: IAward.Payload;

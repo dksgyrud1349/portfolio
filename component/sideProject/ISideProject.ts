@@ -1,7 +1,7 @@
 import { IRow } from '../common/IRow';
 import { ICommon } from '../common/ICommon';
 
-export declare namespace IProject {
+export declare namespace ISideProject {
   /**
    * ### Sample Rendering
    *

@@ -11,6 +11,8 @@ export declare namespace IRow {
 
   export interface Right {
     title?: string;
+    titleColor?: string;
+    where?: string;
     subTitle?: string;
     descriptions?: Description[];
   }

@@ -1,12 +1,12 @@
 import { PropsWithChildren } from 'react';
 import ProjectRow from './row';
 import { CommonSection } from '../common/CommonSection';
-import { IProject } from './IProject';
+import { ISideProject } from './ISideProject';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
 
-type Payload = IProject.Payload;
+type Payload = ISideProject.Payload;
 
-export const Project = {
+export const SideProject = {
   Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
     return PreProcessingComponent<Payload>({
       payload,
@@ -17,7 +17,7 @@ export const Project = {
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
-    <CommonSection title="MAJOR PROJECT">
+    <CommonSection title="SIDE PROJECT">
       <ProjectRow payload={payload} />
     </CommonSection>
   );

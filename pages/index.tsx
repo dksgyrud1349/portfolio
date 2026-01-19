@@ -3,15 +3,16 @@ import { Container } from 'reactstrap';
 
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
-import { Education } from '../component/education';
-import { Etc } from '../component/etc';
-import { Award } from '../component/award';
-import { Certificate } from '../component/certificate';
+// import { Education } from '../component/education';
+// import { Etc } from '../component/etc';
+// import { Award } from '../component/award';
+// import { Certificate } from '../component/certificate';
 import { Experience } from '../component/experience';
 import { Footer } from '../component/footer';
 import { Introduce } from '../component/introduce';
 import { Profile } from '../component/profile';
 import { Project } from '../component/project';
+import { SideProject } from '../component/sideProject';
 import { Skill } from '../component/skill';
 import { Style } from '../component/common/Style';
 import Payload from '../payload';
@@ -33,10 +34,11 @@ function Yosume() {
         <Skill.Component payload={Payload.skill} />
         <Experience.Component payload={Payload.experience} />
         <Project.Component payload={Payload.project} />
-        <Education.Component payload={Payload.education} />
+        <SideProject.Component payload={Payload.sideProject} />
+        {/* <Education.Component payload={Payload.education} />
         <Certificate.Component payload={Payload.certificate} />
         <Award.Component payload={Payload.award} />
-        <Etc.Component payload={Payload.etc} />
+        <Etc.Component payload={Payload.etc} /> */}
         <Footer.Component payload={Payload.footer} />
       </Container>
     </>
