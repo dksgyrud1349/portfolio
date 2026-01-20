@@ -1,7 +1,8 @@
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+// import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import { faBell } from '@fortawesome/free-regular-svg-icons';
+// import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { IProfile } from '../component/profile/IProfile';
 import image from '../asset/hyokyung.jpg';
 
@@ -21,18 +22,13 @@ const profile: IProfile.Payload = {
       icon: faEnvelope,
     },
     {
-      title: '010-2258-1349',
-      icon: faPhone,
-      badge: true,
-    },
-    {
       link: 'https://github.com/dksgyrud1349',
       icon: faGithub,
     },
   ],
   notice: {
-    title: '기재된 휴대폰 번호 또는 이메일로 연락 주시면 감사하겠습니다.',
-    icon: faBell,
+    title: '치열한 삽질로 다진 시스템, 어제보다 더 나은 내일을 위해 끊임없이 노력합니다. ',
+    // icon: faBell,
   },
 };
 

@@ -115,33 +115,33 @@ function ProjectItem({ item }: { item: IProject.Item }) {
                         items={section.items}
                       />
                     ))}
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        marginTop: '1rem',
+                        marginBottom: '1rem',
+                        marginRight: '1.2rem',
+                      }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setOpen(false)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          padding: 0,
+                          cursor: 'pointer',
+                          color: '#666',
+                          fontSize: '0.9rem',
+                        }}
+                      >
+                        닫기
+                      </button>
+                    </div>
                   </div>
                 );
               })}
-
-              {/* 닫기 버튼 */}
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                  marginTop: '2rem',
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    cursor: 'pointer',
-                    color: '#666',
-                    fontSize: '0.9rem',
-                  }}
-                >
-                  닫기
-                </button>
-              </div>
             </div>
           )}
         </div>

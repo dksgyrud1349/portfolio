@@ -29,7 +29,7 @@ export function CommonRows({
         </Col>
 
         <Col sm={12} md={9} style={{ marginBottom: '3rem' }}>
-          {right.title && <h4>{right.title}</h4>}
+          {right.title && <h4 style={{ color: right.titleColor ?? '#111827' }}>{right.title}</h4>}
 
           {right.subTitle && (
             <p>

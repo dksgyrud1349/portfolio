@@ -12,11 +12,6 @@ const project: IProject.Payload = {
         '웹 예약부터 키오스크 결제, 게이트 입장 제어까지 아우르는 온·오프라인 통합 운영 솔루션 | 체인팜 주식회사',
       descriptions: [
         {
-          content: '🔗 천안 유관순 파크골프장',
-          weight: 'MEDIUM',
-          href: 'https://parkgolf.cauc.or.kr/reservation/capg/parkGolf',
-        },
-        {
           content: '역할',
           weight: 'MEDIUM',
           descriptions: [
@@ -41,8 +36,8 @@ const project: IProject.Payload = {
         {
           subject: '',
           images: [
-            '/asset/cheonan-parkgolf/homepage2.png',
-            '/asset/cheonan-parkgolf/homepage1.png',
+            '/portfolio/asset/cheonan-parkgolf/homepage2.png',
+            '/portfolio/asset/cheonan-parkgolf/homepage1.png',
           ],
           sections: [
             {
@@ -88,7 +83,7 @@ const project: IProject.Payload = {
       ],
       cases: [
         {
-          images: ['/asset/icheon/photo2.png', '/asset/icheon/photo1.png'],
+          images: ['/portfolio/asset/icheon/photo2.png', '/portfolio/asset/icheon/photo1.png'],
           subject: '',
           sections: [
             {
@@ -141,7 +136,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '[온·오프라인 통합]: 앱 예약부터 키오스크 발권, 태블릿 QR 탑승까지 이어지는 E2E 모빌리티 시스템 구축 참여',
+                '[온·오프라인 통합]: 앱 결제/키오스크 결제와 발권, 태블릿 QR 탑승까지 이어지는 E2E 모빌리티 시스템 구축 참여',
             },
           ],
         },
@@ -149,11 +144,12 @@ const project: IProject.Payload = {
       cases: [
         {
           subject: '',
+          images: ['/asset/mapo/photo1.JPG'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
               items: [
-                '**[온·오프라인 통합]**: 앱 예약부터 키오스크 발권, 태블릿 QR 탑승까지 이어지는 E2E 모빌리티 시스템 구축',
+                '**[온·오프라인 통합]**: 앱 결제/키오스크 결제와 발권, 태블릿 QR 탑승까지 이어지는 E2E 모빌리티 시스템 구축',
                 '**[운영 가시성 확보]**: 모든 결제 및 탑승 데이터를 수치화하여 실시간 운영 현황 파악',
               ],
             },
@@ -436,7 +432,7 @@ const project: IProject.Payload = {
       cases: [
         {
           subject: '[운영 효율화] 행정정보공동이용망을 이용하여 할인 적용 로직 구현',
-          images: ['/asset/yeoju/photo1.png'],
+          images: ['/portfolio/asset/yeoju/photo1.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -465,7 +461,7 @@ const project: IProject.Payload = {
         },
         {
           subject: '[보안 강화] 일회성(OTP) 동적 QR 시스템 도입',
-          images: ['/asset/yeoju/photo2.png', '/asset/yeoju/photo3.png'],
+          images: ['/portfolio/asset/yeoju/photo2.png', '/portfolio/asset/yeoju/photo3.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -541,7 +537,7 @@ const project: IProject.Payload = {
       cases: [
         {
           subject: '',
-          images: ['/asset/incheon/photo1.jpg', '/asset/incheon/photo2.jpg'],
+          images: ['/portfolio/asset/incheon/photo1.jpg', '/portfolio/asset/incheon/photo2.jpg'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -603,7 +599,7 @@ const project: IProject.Payload = {
       cases: [
         {
           subject: '[장애 정규화] 기존 미결제 오류 50여 건 전수 분석 및 해결',
-          images: ['/asset/incheon/photo3.png'],
+          images: ['/portfolio/asset/incheon/photo3.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',

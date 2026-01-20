@@ -39,28 +39,6 @@ const sideProject: ISideProject.Payload = {
             },
           ],
         },
-        {
-          content: '핵심 내용',
-          weight: 'MEDIUM',
-          descriptions: [
-            {
-              content:
-                '[신규 프로젝트 아키텍처 설계]: 개발 생산성 향상을 위한 초기 프로젝트 세팅 및 모듈 구조 설계',
-            },
-            {
-              content:
-                '[OAuth 2.0 및 JWT 보안 인증]: Spring Security와 JWT를 결합한 무상태 인증 환경 구축 및 소셜 로그인 연동',
-            },
-            {
-              content:
-                '[API 명세 자동화 및 표준화]: Swagger(Springdoc) 연동을 통한 인터페이스 문서화 및 팀 공통 API 응답 규격 정의',
-            },
-            {
-              content:
-                '[객체 지향 데이터 모델링]: JPA 기반의 데이터 접근 계층 구축으로 생산성 중심의 백엔드 개발 환경 기틀 마련',
-            },
-          ],
-        },
       ],
       cases: [
         {
@@ -76,8 +54,10 @@ const sideProject: ISideProject.Payload = {
             {
               title: '기술적 해결 과제 및 구현',
               items: [
-                '**[보안 아키텍처 설계]**: Spring Security와 JWT를 결합한 무상태 인증 구조 설계 및 보안 필터 체인 최적화',
-                '**[JPA 기반 도메인 모델링]**: Spring Data JPA 도입으로 반복 쿼리를 자동화',
+                '**[개발 생산성 향상]**: JPA 도입으로 초기 프로토타입 개발 속도를 기존 방식 대비 30% 이상 향상',
+                '**[코드 품질 상향 평준화]**: 표준화된 아키텍처를 공유하여 팀원 간 기술적 간극을 줄이고 일관된 코드 품질을 유지',
+                '**[API 명세 표준화]**: Swagger(Springdoc) 연동을 통한 인터페이스 문서화 및 팀 공통 API 응답 규격 정의',
+                '**[객체 지향 데이터 모델링]**: JPA 기반의 데이터 접근 계층 구축으로 생산성 중심의 백엔드 개발 환경 기틀 마련',
               ],
             },
             {
