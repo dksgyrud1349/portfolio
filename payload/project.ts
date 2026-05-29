@@ -83,7 +83,7 @@ const project: IProject.Payload = {
         },
         {
           subject: '세션 기반 로그인을 90일 유지 쿠키 방식으로 개선',
-          images: ['/asset/cheonan-parkgolf/diagram2.png'],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/cheonan-parkgolf/diagram2.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -111,7 +111,7 @@ const project: IProject.Payload = {
         {
           subject:
             '회원가입 시 사내 행정망 API 연동을 통한 할인 자격 검증 및 자동 할인 적용 로직 개발',
-          images: ['/asset/cheonan-parkgolf/diagram3.png'],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/cheonan-parkgolf/diagram3.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -325,7 +325,7 @@ const project: IProject.Payload = {
       cases: [
         {
           subject: 'OTP 기반 동적 QR 인증 체계 도입으로 고정형 QR 부정 이용 원천 차단',
-          images: ['/asset/yeoju/diagram1.png'],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/yeoju/diagram1.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -354,7 +354,7 @@ const project: IProject.Payload = {
         },
         {
           subject: '카카오 알림톡·문자 발송 로직을 공통 메시징 서비스 구조로 리팩토링',
-          images: ['/asset/yeoju/diagram2.png'],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/yeoju/diagram2.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -382,7 +382,7 @@ const project: IProject.Payload = {
         },
         {
           subject: '사내 행정망 API 연동을 통한 할인 자격 검증 및 할인 적용 로직 설계·개발',
-          images: ['/asset/yeoju/diagram3.png'],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/yeoju/diagram3.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
