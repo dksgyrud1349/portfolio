@@ -52,7 +52,7 @@ const project: IProject.Payload = {
         {
           subject:
             '고연령층을 고려한 임시 테이블 기반 입장권 선점 방식, @Scheduled 기반 자동 해제 배치 시스템 설계·개발',
-          images: ['/asset/cheonan-parkgolf/diagram1.png'],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/cheonan-parkgolf/diagram1.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
