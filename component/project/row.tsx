@@ -29,10 +29,8 @@ function ProjectItem({ item }: { item: IProject.Item }) {
   const cases = item.cases ?? [];
   const isToggleable = cases.length > 0;
 
-  // ✅ 추가: case visible 상태
   const [visibleCases, setVisibleCases] = useState(cases.map(() => true));
 
-  // ✅ 토글 시 초기화
   const handleToggle = () => {
     if (!open) {
       setVisibleCases(cases.map(() => true));
@@ -40,13 +38,11 @@ function ProjectItem({ item }: { item: IProject.Item }) {
     setOpen(!open);
   };
 
-  // ✅ case 닫기 처리
   const handleCloseCase = (idx: number) => {
     const updated = [...visibleCases];
     updated[idx] = false;
     setVisibleCases(updated);
 
-    // 🔥 핵심: 전부 닫히면 프로젝트도 닫기
     if (updated.every((v) => !v)) {
       setOpen(false);
     }
@@ -59,38 +55,33 @@ function ProjectItem({ item }: { item: IProject.Item }) {
       open={open}
       onClickRight={isToggleable ? handleToggle : undefined}
       rightExtra={
-        open && (
-          <div className="mt-4 mb-6 text-sm text-gray-700">
-            {cases.map((c, idx) =>
-              visibleCases[idx] ? (
-                <CaseItem
-                  key={`${item.title}-${c.subject ?? 'case'}`}
-                  c={c}
-                  index={idx}
-                  onClose={() => handleCloseCase(idx)} // ✅ 추가
-                />
-              ) : null,
-            )}
-          </div>
-        )
+        <div
+          className="mt-4 mb-6 text-sm text-gray-700"
+          style={{
+            display: open ? 'block' : 'none', // 🔥 핵심
+          }}
+        >
+          {cases.map((c, idx) =>
+            visibleCases[idx] ? (
+              <CaseItem
+                key={`${item.title}-${c.subject ?? 'case'}`}
+                c={c}
+                index={idx}
+                onClose={() => handleCloseCase(idx)}
+              />
+            ) : null,
+          )}
+        </div>
       }
     />
   );
 }
 
 /* ===============================
-   CASE 컴포넌트 (수정됨)
+   CASE 컴포넌트
 ================================ */
 
-function CaseItem({
-  c,
-  index,
-  onClose,
-}: {
-  c: any;
-  index: number;
-  onClose: () => void; // ✅ 추가
-}) {
+function CaseItem({ c, index, onClose }: { c: any; index: number; onClose: () => void }) {
   return (
     <div
       className="p-6 mb-6 mt-3"
@@ -111,11 +102,11 @@ function CaseItem({
             flexWrap: 'wrap',
           }}
         >
-          {(c.images ?? []).slice(0, 2).map((src: string) => (
+          {c.images.slice(0, 2).map((src: string) => (
             <img
               key={src}
               src={src}
-              alt={`case-img-${src}`}
+              alt="case-image"
               style={{
                 maxWidth: '800px',
                 width: '100%',
@@ -137,20 +128,18 @@ function CaseItem({
           marginLeft: '1.5rem',
         }}
       >
-        <span>
-          CASE {index + 1}
-          {c.subject && (
-            <span
-              style={{
-                marginLeft: '8px',
-                fontSize: '80%',
-                color: '#6B7280',
-              }}
-            >
-              – {c.subject}
-            </span>
-          )}
-        </span>
+        CASE {index + 1}
+        {c.subject && (
+          <span
+            style={{
+              marginLeft: '8px',
+              fontSize: '80%',
+              color: '#6B7280',
+            }}
+          >
+            – {c.subject}
+          </span>
+        )}
       </div>
 
       {/* 내용 */}
@@ -162,7 +151,7 @@ function CaseItem({
         />
       ))}
 
-      {/* 닫기 버튼 */}
+      {/* 닫기 */}
       <div
         style={{
           display: 'flex',
@@ -179,7 +168,6 @@ function CaseItem({
             cursor: 'pointer',
             color: '#666',
             fontSize: '0.9rem',
-            margin: '1%',
           }}
         >
           닫기
@@ -188,6 +176,7 @@ function CaseItem({
     </div>
   );
 }
+
 /* ===============================
    Row 직렬화
 ================================ */
