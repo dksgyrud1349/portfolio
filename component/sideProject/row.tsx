@@ -20,136 +20,174 @@ export default function ProjectRow({ payload }: { payload: ISideProject.Payload 
   );
 }
 
+/* ===============================
+   프로젝트 아이템
+================================ */
+
 function ProjectItem({ item }: { item: ISideProject.Item }) {
   const [open, setOpen] = useState(false);
   const cases = item.cases ?? [];
   const isToggleable = cases.length > 0;
+
+  // ✅ 추가: case visible 상태
+  const [visibleCases, setVisibleCases] = useState(cases.map(() => true));
+
+  // ✅ 토글 시 초기화
+  const handleToggle = () => {
+    if (!open) {
+      setVisibleCases(cases.map(() => true));
+    }
+    setOpen(!open);
+  };
+
+  // ✅ case 닫기 처리
+  const handleCloseCase = (idx: number) => {
+    const updated = [...visibleCases];
+    updated[idx] = false;
+    setVisibleCases(updated);
+
+    // 🔥 핵심: 전부 닫히면 프로젝트도 닫기
+    if (updated.every((v) => !v)) {
+      setOpen(false);
+    }
+  };
 
   return (
     <CommonRows
       index={0}
       payload={serialize(item)}
       open={open}
-      onClickRight={isToggleable ? () => setOpen(true) : undefined}
+      onClickRight={isToggleable ? handleToggle : undefined}
       rightExtra={
-        <div
-          style={{
-            maxHeight: open ? '4000px' : '0px',
-            opacity: open ? 1 : 0,
-            overflow: 'hidden',
-            transition: 'max-height 1.45s ease, opacity 0.35s ease',
-          }}
-        >
-          {open && (
-            <div className="mt-4 mb-6 text-sm text-gray-700">
-              {cases.map((c) => {
-                const caseKey = `${item.title}-${c.subject ?? 'case'}`;
-
-                return (
-                  <div
-                    key={caseKey}
-                    className="p-6 mb-6 mt-3"
-                    style={{
-                      backgroundColor: '#F9FAFB',
-                      border: '2px solid #E5E7EB',
-                      borderRadius: '22px',
-                    }}
-                  >
-                    {/* 이미지 */}
-                    {(c.images ?? []).length > 0 && (
-                      <div
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                          gap: '16px',
-                          marginTop: '0.5rem',
-                          flexWrap: 'wrap',
-                        }}
-                      >
-                        {(c.images ?? []).slice(0, 2).map((src) => (
-                          <img
-                            key={src}
-                            src={src}
-                            alt={`case-img-${src}`}
-                            style={{
-                              maxWidth: '200px',
-                              width: '100%',
-                              borderRadius: '14px',
-                              border: '1px solid #E5E7EB',
-                            }}
-                          />
-                        ))}
-                      </div>
-                    )}
-
-                    {/* CASE 제목 */}
-                    <div
-                      className="flex items-center gap-2"
-                      style={{
-                        fontSize: '140%',
-                        fontWeight: 700,
-                        marginTop: '0.5rem',
-                        marginLeft: '1.5rem',
-                      }}
-                    >
-                      <span>
-                        CASE
-                        {c.subject && (
-                          <span
-                            style={{
-                              marginLeft: '8px',
-                              fontSize: '80%',
-                              color: '#6B7280',
-                            }}
-                          >
-                            – {c.subject}
-                          </span>
-                        )}
-                      </span>
-                    </div>
-
-                    {(c.sections ?? []).map((section) => (
-                      <SectionByType
-                        key={`${caseKey}-${section.title}`}
-                        title={section.title}
-                        items={section.items}
-                      />
-                    ))}
-                  </div>
-                );
-              })}
-
-              {/* 닫기 버튼 */}
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                  marginTop: '2rem',
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    cursor: 'pointer',
-                    color: '#666',
-                    fontSize: '0.9rem',
-                  }}
-                >
-                  닫기
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
+        open && (
+          <div className="mt-4 mb-6 text-sm text-gray-700">
+            {cases.map((c, idx) =>
+              visibleCases[idx] ? (
+                <CaseItem
+                  key={`${item.title}-${c.subject ?? 'case'}`}
+                  c={c}
+                  index={idx}
+                  onClose={() => handleCloseCase(idx)} // ✅ 추가
+                />
+              ) : null,
+            )}
+          </div>
+        )
       }
     />
   );
 }
 
+/* ===============================
+   CASE 컴포넌트 (수정됨)
+================================ */
+
+function CaseItem({
+  c,
+  index,
+  onClose,
+}: {
+  c: any;
+  index: number;
+  onClose: () => void; // ✅ 추가
+}) {
+  return (
+    <div
+      className="p-6 mb-6 mt-3"
+      style={{
+        backgroundColor: '#F9FAFB',
+        border: '2px solid #E5E7EB',
+        borderRadius: '22px',
+      }}
+    >
+      {/* 이미지 */}
+      {(c.images ?? []).length > 0 && (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '16px',
+            marginTop: '0.5rem',
+            flexWrap: 'wrap',
+          }}
+        >
+          {(c.images ?? []).slice(0, 2).map((src: string) => (
+            <img
+              key={src}
+              src={src}
+              alt={`case-img-${src}`}
+              style={{
+                maxWidth: '300px',
+                width: '100%',
+                borderRadius: '14px',
+                border: '1px solid #E5E7EB',
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* CASE 제목 */}
+      <div
+        className="flex items-center gap-2"
+        style={{
+          fontSize: '140%',
+          fontWeight: 700,
+          marginTop: '0.5rem',
+          marginLeft: '1.5rem',
+        }}
+      >
+        <span>
+          CASE {index + 1}
+          {c.subject && (
+            <span
+              style={{
+                marginLeft: '8px',
+                fontSize: '80%',
+                color: '#6B7280',
+              }}
+            >
+              – {c.subject}
+            </span>
+          )}
+        </span>
+      </div>
+
+      {/* 내용 */}
+      {(c.sections ?? []).map((section: any) => (
+        <SectionByType
+          key={`${c.subject}-${section.title}`}
+          title={section.title}
+          items={section.items}
+        />
+      ))}
+
+      {/* 닫기 버튼 */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          marginTop: '1rem',
+        }}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            color: '#666',
+            fontSize: '0.9rem',
+            margin: '1%',
+          }}
+        >
+          닫기
+        </button>
+      </div>
+    </div>
+  );
+}
 /* ===============================
    Row 직렬화
 ================================ */
@@ -223,7 +261,7 @@ function SectionByType({ title, items }: { title: string; items: string[] }) {
 }
 
 /* ===============================
-   강조 처리 (** **)
+   강조 처리
 ================================ */
 
 function HighlightText({ text }: { text: string }) {
@@ -234,6 +272,10 @@ function HighlightText({ text }: { text: string }) {
 
   return <span dangerouslySetInnerHTML={{ __html: html }} />;
 }
+
+/* ===============================
+   스타일 메타
+================================ */
 
 const SECTION_META: Record<
   string,

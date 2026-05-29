@@ -37,10 +37,25 @@ const frontEnd: ISkill.Skill = {
   category: 'Front-end',
   items: [
     {
+      title: 'HTML5',
+    },
+    {
+      title: 'CSS',
+    },
+    {
       title: 'Vue.js',
     },
     {
+      title: 'React',
+    },
+    {
+      title: 'Next.js',
+    },
+    {
       title: 'jQuery',
+    },
+    {
+      title: 'Tailwind CSS',
     },
     {
       title: 'JSP',
@@ -58,7 +73,7 @@ const database: ISkill.Skill = {
       title: 'MongoDB',
     },
     {
-      title: 'Oracle',
+      title: 'OracleDB',
     },
   ],
 };
@@ -71,9 +86,6 @@ const versionControlAndTool: ISkill.Skill = {
     },
     {
       title: 'SVN',
-    },
-    {
-      title: 'Apache Tomcat 9.0',
     },
     {
       title: 'Swagger',
