@@ -242,7 +242,7 @@ const project: IProject.Payload = {
         },
         {
           subject: '@Scheduled 기반 미사용 티켓 50% 자동 환불 배치 시스템 구축',
-          images: [],
+          images: ['/asset/mapo/diagram1.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
