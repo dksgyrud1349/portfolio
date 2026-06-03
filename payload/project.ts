@@ -214,7 +214,7 @@ const project: IProject.Payload = {
         },
         {
           subject: '알림톡·실물 티켓 선택 가능한 발권 프로세스 설계·개발',
-          images: [],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/mapo/diagram2.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
@@ -242,7 +242,7 @@ const project: IProject.Payload = {
         },
         {
           subject: '@Scheduled 기반 미사용 티켓 50% 자동 환불 배치 시스템 구축',
-          images: ['/asset/mapo/diagram1.png'],
+          images: ['https://dksgyrud1349.github.io/portfolio/asset/mapo/diagram3.png'],
           sections: [
             {
               title: '프로젝트 배경 및 핵심 과제',
