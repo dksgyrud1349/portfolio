@@ -40,7 +40,7 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
             <Col xs={12} sm={6} lg={4}>
               <Card className="h-100 shadow-sm">
                 <CardBody>
-                  <CardTitle tag="h5">🛠️ Quality</CardTitle>
+                  <CardTitle tag="h5">Quality</CardTitle>
                   <CardText>
                     사내 테스트로 발견된 오류 100여 건 전량 해결, 오류 0건 운영 달성
                   </CardText>
@@ -51,7 +51,7 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
             <Col xs={12} sm={6} lg={4}>
               <Card className="h-100 shadow-sm">
                 <CardBody>
-                  <CardTitle tag="h5">🏛️ Experience</CardTitle>
+                  <CardTitle tag="h5">Experience</CardTitle>
                   <CardText>공공기관 시스템 설계·개발·운영 경험</CardText>
                 </CardBody>
               </Card>
@@ -60,7 +60,7 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
             <Col xs={12} sm={6} lg={4}>
               <Card className="h-100 shadow-sm">
                 <CardBody>
-                  <CardTitle tag="h5">🗂️ Ownership</CardTitle>
+                  <CardTitle tag="h5">Ownership</CardTitle>
                   <CardText>요구사항부터 운영까지 풀사이클 수행</CardText>
                 </CardBody>
               </Card>
