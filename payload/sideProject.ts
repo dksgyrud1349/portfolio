@@ -124,12 +124,17 @@ const sideProject: ISideProject.Payload = {
           href: 'https://github.com/T-BluePot/barogagi-back',
         },
         {
+          content: 'Google Play',
+          weight: 'MEDIUM',
+          href: 'https://play.google.com/store/apps/details?id=com.bluehp.fitpl&hl=ko',
+        },
+        {
           content: '기술 스택',
           weight: 'MEDIUM',
           descriptions: [
             {
               content:
-                'Java, Spring Boot, JPA, MyBatis, MariaDB, 퍼플북(알림톡/SMS), Spring Mail, Discord Webhook, Swagger, GitHub',
+                'Java, Spring Boot, JPA, MyBatis, MariaDB, 퍼플북(알림톡/SMS), Spring Mail, FCM, Discord Webhook, Swagger, GitHub',
             },
           ],
         },
