@@ -234,7 +234,7 @@ const sideProject: ISideProject.Payload = {
                 '**[Outbox 패턴 적용]**: 발송 대상자를 MESSAGE_OUTBOX에 READY 상태로 저장하여 비동기 처리 구조 구성',
                 '**[상태 전이 관리]**: READY -> PROCESSING -> SUCCESS/FAIL/IMPOSSIBLE 흐름으로 발송 상태 관리',
                 '**[재시도 로직]**: 발송 실패 시 최대 3회까지 재시도하도록 구현. 알림톡 실패 시 즉시 IMPOSSIBLE 상태로 전환하여 재시도 방지 및 문자로 재시도',
-                '**[다중 채널 발송]**: 사용자 유형에 따라 이메일·알림톡/SMS로 분기 처리하도록 구현',
+                '**[다중 채널 발송]**: 사용자 유형(일반/소셜)에 따라 Spring Mail 기반 이메일, 퍼플북 API 기반 알림톡/SMS로 분기 처리하도록 구현',
                 '**[발송 이력 관리]**: MESSAGE_SEND_HISTORY에 성공/실패 여부와 관계없이 모든 발송 이력 저장',
               ],
             },
