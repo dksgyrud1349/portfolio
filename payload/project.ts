@@ -110,7 +110,7 @@ const project: IProject.Payload = {
         // },
         {
           subject:
-            '사내 안면인식 API의 인식 결과를 회원·예약 데이터와 매칭하여 키오스크 결제 가능 여부를 검증하는 프로세스 설계·개발',
+            '사내 안면인식 API를 이용하여 키오스크 결제 가능 여부를 검증하는 프로세스 설계·개발',
           images: ['https://dksgyrud1349.github.io/portfolio/asset/cheonan-parkgolf/diagram2.png'],
           sections: [
             {
