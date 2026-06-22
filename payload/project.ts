@@ -24,9 +24,8 @@ const project: IProject.Payload = {
           content: '역할',
           weight: 'MEDIUM',
           descriptions: [
-            {
-              content: '기존 시스템을 기반으로 요구사항 분석·설계·개발·런칭·운영 전 과정 수행',
-            },
+            { content: '여주 파크골프장 시스템을 기반으로 천안 지역 요구사항에 맞춘 신규 구축' },
+            { content: '요구사항 분석·설계·개발·런칭·운영 전 과정 수행' },
           ],
         },
         {
@@ -157,7 +156,10 @@ const project: IProject.Payload = {
           content: '역할',
           weight: 'MEDIUM',
           descriptions: [
-            { content: '기존 시스템을 기반으로 요구사항 분석·설계·개발·런칭·운영 전 과정 수행' },
+            {
+              content:
+                '인천시티투어 시스템을 기반으로 요구사항 분석·설계·개발·런칭·운영 전 과정 수행',
+            },
             { content: '외부 앱 개발사와 단독으로 협업하며 앱 전용 API 설계·개발·운영 담당' },
           ],
         },
