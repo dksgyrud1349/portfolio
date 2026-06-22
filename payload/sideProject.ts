@@ -145,6 +145,7 @@ const sideProject: ISideProject.Payload = {
             { content: '회원가입·로그인·회원 관련 RESTful API 개발' },
             { content: 'Discord Webhook 기반 실시간 서버 장애 알림 시스템 구축' },
             { content: 'Outbox 패턴 기반 탈퇴 관련 배치 프로세스 설계·개발' },
+            { content: 'FCM Token 기반 사용자 알림 푸시 기능 개발' },
           ],
         },
       ],
