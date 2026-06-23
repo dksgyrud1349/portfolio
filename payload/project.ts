@@ -142,7 +142,7 @@ const project: IProject.Payload = {
       ],
     },
     {
-      title: '마포순환열차버스 탑승권 결제·탑승 시스템 구축·운영',
+      title: '마포순환열차버스 탑승권 결제·탑승 시스템 구축',
       titleColor: '#3c78d8',
       startedAt: '2024-12',
       endedAt: '2025-04',
@@ -164,7 +164,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '인천시티투어 시스템을 기반으로 마포구청 요구사항에 맞춰 요구사항 분석·설계·개발·런칭·운영 전 과정 수행',
+                '인천시티투어 시스템을 기반으로 마포구청 요구사항에 맞춰 요구사항 분석·설계·개발·런칭 수행',
             },
           ],
         },
